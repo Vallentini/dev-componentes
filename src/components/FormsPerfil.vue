@@ -58,29 +58,23 @@ function salvarPerfil() {
 
 <template>
   <form action="">
-    <label for="nomeField">Nome:</label>
-    <input type="text"  id="nomeField" v-model="user.nome" required>
-    <br>
-    <label for="sobrenomeField">Sobrenome:</label>
-    <input type="text"  id="sobrenomeField" v-model="user.sobrenome" required>
-    <br>
-    <label for="dataField">Data:</label>
-    <input type="date"  id="dataField" v-model="user.data" required>
-    <br>
-    <label for="emailField">Email:</label>
+    <h1>Perfil</h1>
+    <label class="label-form" for="nomeField">Nome:</label>
+    <input class="ipunt-form" type="text"  id="nomeField" v-model="user.nome" required>
+    <label class="label-form" for="sobrenomeField">Sobrenome:</label>
+    <input class="ipunt-form" type="text"  id="sobrenomeField" v-model="user.sobrenome" required>
+    <label class="label-form" for="dataField">Data:</label>
+    <input class="ipunt-form" type="date"  id="dataField" v-model="user.data" required>
+    <label class="label-form" for="emailField">Email:</label>
     <span class="input-group-text" id="emailFieldPrepend"></span>
-    <input type="email" class="form-control" id="emailField" aria-describedby="emailFieldPrepend" v-model="user.email" required>
-    <br>
-    <label for="senhaField">Senha</label>
-    <input type="text" class="form-control" id="senhaField" v-model="user.senha" />
-    <br>
-    <label for="senhaconfirmField">Confirmar senha</label>
-    <input type="text" class="form-control" id="senhaconfirmField" v-model="user.senhaconfirm" />
-    <br>
-    <label for="cidadeField" >Cidade</label>
-    <input type="text" class="form-control" id="cidadeField" v-model="user.cidade" />
-    <br>
-    <label for="estadoField">Estado</label>
+    <input class="ipunt-form" type="email" id="emailField" aria-describedby="emailFieldPrepend" v-model="user.email" required>
+    <label class="label-form" for="senhaField">Senha</label>
+    <input class="ipunt-form" type="text" id="senhaField" v-model="user.senha" />
+    <label class="label-form" for="senhaconfirmField">Confirmar senha</label>
+    <input class="ipunt-form" type="text" id="senhaconfirmField" v-model="user.senhaconfirm" />
+    <label class="label-form" for="cidadeField" >Cidade</label>
+    <input class="ipunt-form" type="text" id="cidadeField" v-model="user.cidade" />
+    <label class="label-form" for="estadoField">Estado</label>
       <select class="form-select" id="estadoField" v-model="user.estado">
         <option selected disabled value="">Selecionar...</option>
         <option v-for="estado of estados" :key="estado.uf" :value="estado.uf">
@@ -88,49 +82,97 @@ function salvarPerfil() {
         </option>
       </select>
     <br> 
-    <label for="ruaField">Rua:</label>
-    <input type="text" class="form-control" id="ruaField" v-model="user.rua" />
-    <br>
-    <label for="bairroField">Bairro</label>
-    <input type="text" class="form-control" id="bairroField" v-model="user.bairro" />
-    <br>
-    <label for="biografiaField">Biografia</label>
-    <input type="text" class="form-control" id="biografiaField" v-model="user.biografia" />
-    <br>
+    <label class="label-form"  for="ruaField">Rua:</label>
+    <input class="ipunt-form" type="text" id="ruaField" v-model="user.rua" />
+    <label class="label-form" for="bairroField">Bairro</label>
+    <input class="ipunt-form" type="text" id="bairroField" v-model="user.bairro" />
+    <label class="label-form" for="biografiaField">Biografia</label>
+    <input class="ipunt-form" type="text" id="biografiaField" v-model="user.biografia" />
     <div >
       <p>Hobbies</p>
-      <div class="row-selection"><label for="hobbiesField">Esportes</label><input
-              type="checkbox"
-              id="hobbiesField"
-              value="esportes"
-              v-model="user.hobbies"
-            /></div>
-      <div class="row-selection"><label for="hobbiesField">Música</label><input
-              type="checkbox"
-              id="hobbiesField"
-              value="música"
-              v-model="user.hobbies"
-            /></div>
-      <div class="row-selection"><label for="hobbiesField">Viagens</label><input
-              type="checkbox"
-              id="hobbiesField"
-              value="viagens"
-              v-model="user.hobbies"
-            />
-            </div>
-            <div class="row-selection"><label for="hobbiesField">Leitura</label><input
-              type="checkbox"
-              id="hobbiesField"
-              value="leitura"
-              v-model="user.hobbies"
-            /></div>
-          </div>
+      <div class="row-selection">
+        <label class="label-form" for="hobbiesField">Esportes</label>
+        <input class="ipunt-form" type="checkbox" id="hobbiesField" value="esportes" v-model="user.hobbies"></div>
+      <div class="row-selection">
+        <label class="label-form" for="hobbiesField">Música</label>
+        <input class="ipunt-form" type="checkbox" id="hobbiesField" value="música" v-model="user.hobbies"/></div>
+      <div class="row-selection">
+        <label class="label-form" for="hobbiesField">Viagens</label>
+      <input class="ipunt-form" type="checkbox" id="hobbiesField" value="viagens" v-model="user.hobbies"/></div>
+      <div class="row-selection">
+        <label class="label-form" for="hobbiesField">Leitura</label>
+        <input class="ipunt-form" type="checkbox" id="hobbiesField" value="leitura" v-model="user.hobbies"/></div>
+      </div>
+      <div >
+        <p>Linguagem preferida</p>
+        <div>
+          <label class="label-form" for="langC">C</label>
+          <input class="ipunt-form" type="radio" v-model="user.linguagempref" value="C" id="langC"/></div>
+        <div>
+          <label class="label-form" for="langJava">Java</label> 
+          <input class="ipunt-form" type="radio" v-model="user.linguagempref" value="Java" id="langJava"/>
+        </div>
+        <div>
+          <label class="label-form" for="langPython">Python</label>
+          <input class="ipunt-form" type="radio" v-model="user.linguagempref" value="Python" id="langPython"/></div>
+        <div>
+          <label class="label-form" for="langJs">JavaScript</label>
+          <input class="ipunt-form" type="radio" v-model="user.linguagempref" value="Javascript" id="langJs"/>
+        </div>
+      </div>
+      <div>
+        <button class="botao"  type="submit">Enviar</button>
+      </div>
   </form>
 </template>
 
-
-
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+form {
+  width: 40%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-color:rgb(195, 214, 248);;                    
+}
+.label-form {
+font-size: 20px;
+margin-top: 15px;
+margin-right: 2px;
+}
+
+.input-form {
+  margin-bottom: 15px;
+
+}
+
+.botao{
+  background-color: rgb(228, 255, 246);
+  margin-top: 5px;
+  width: 100px;
+  height: 40px;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+p{
+  font-size: 20px;
+  margin: auto;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
 
 </style>
