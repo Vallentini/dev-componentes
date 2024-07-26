@@ -1,19 +1,29 @@
 <script setup>
-import FormsPerfil  from './components/FormsPerfil.vue'
+import { ref } from 'vue';
+import FormsPerfil from './components/FormsPerfil.vue'
 import InfoForm from './components/InfoForm.vue'
+const sla = ref('')
+function salvar(params) {
+  console.log(params);
+  sla.value = params;
+}
 </script>
 
 <template>
-<div><FormsPerfil msg="You did it!" />
+    <section>
+    <FormsPerfil @adicionar="salvar" />
 
-<InfoForm />
-</div>
-  
+    <InfoForm :user="sla" />
+  </section>
+
 </template>
 
 <style scoped>
-div {
+section {
   display: flex;
   width: 70%;
-}
+  margin:  20px auto;
+  gap: 2rem;
+  }
+  
 </style>
